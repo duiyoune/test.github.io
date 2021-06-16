@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- http-equiv指定文档的内容类型和编码类型 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- name属性 视图和描述 name+content -->
+    <meta name="viewport" content="width=800, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>ToDoList—最简单的待办事项列表</title>
+    <meta name="description" content="ToDoList无须注册即可使用，数据存储在用户浏览器的html5本地数据库里，是最简单最安全的待办事项列表应用！" />
+    <!-- 外接式css -->
+    <link rel="stylesheet" href="./index.css">
+
+</head>
+
+<body>
+    <!-- 头部:在这添加任务 -->
+    <div class="header">
+        <div class="box">
+            <form action="javascript:postaction()" id="form">
+                <!-- for将label标签绑定到input -->
+                <label for="title">ToDoList</label>
+                <!-- required规定提交表单之前有必填字段  autocomplete:自动补齐-->
+                <input type="text" id="title" name="title" placeholder="添加ToDo" required="required"
+                    autocomplete="off" />
+                <input type="datetime-local" id="datetime" value=“2021-07-01T12：00” />
+                <button class="submit" id="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- 主体：在这进行任务和已完成 -->
+    <div class="content">
+        <h2 class="running">正在进行 <button class="batch" onclick="allFinish()">全部完成</button> <button class="batch"
+                onclick="allUnfinish()">全部未完成</button> <span id="todocount"></span></h2>
+
+        <ol id="todolist" class="demo-box">
+        </ol>
+        <h2>已经完成 <span id="donecount"></span></h2>
+        <ul id="donelist">
+        </ul>
+        <h2>每日提醒 <span id="repeatacount"></span></h2>
+        <ol id="repeatlist" class="demo-box">
+        </ol>
+        <ul id="repeatdonelist">
+        </ul>
+    </div>
+
+    <!-- 脚部：印记和全清除按钮 -->
+    <div class="footer">
+        <a href="javascript:clear();">clear</a>
+    </div>
+    <div class="lame-card-list-tb lame-mt-2">
+        <div style="display: flex;">
+            <div class="right_menu lame-card-item lame-flex lame-ai-center lame-jc-between">
+                <div class="left lame-flex lame-ai-center"> <img
+                        src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1220403926,908266914&fm=111&gp=0.jpg"
+                        alt=""> </div>
+                <div class="right lame-flex lame-flex-column"> <span
+                        class="right_title only-two-line">【原封正品】2020新款Apple/苹果 11英寸iPad
+                        Pro全面屏平板电脑便携式商务办公学生教育电脑支持面容ID</span> <span class="right_desc only-two-line">面容ID解锁 Liquid视网膜显示屏
+                        A12Z芯片</span> <span class="right_size">256G</span>
+                    <div class="right_tag_list"> <span class="tag_item">APPLE</span> <span class="tag_item">旗舰店</span>
+                        <span class="tag_item">正品保障</span> <span class="tag_item">极速发货</span> <span
+                            class="tag_item">顺丰包邮</span> </div>
+                    <div class="right_content lame-flex lame-ai-end">
+                        <div class="content_price"> <span class="price_unit">¥</span> <span
+                                class="price_num">9899.99</span> </div>
+                        <div class="content_sale"> <span>9999件已售</span> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-menu"> 收藏 </div>
+        </div>
+        <div style="display: flex;">
+            <div class="right_menu lame-card-item lame-flex lame-ai-center lame-jc-between">
+                <div class="left lame-flex lame-ai-center"> <img
+                        src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1220403926,908266914&fm=111&gp=0.jpg"
+                        alt=""> </div>
+                <div class="right lame-flex lame-flex-column"> <span
+                        class="right_title only-two-line">【原封正品】2020新款Apple/苹果 11英寸iPad
+                        Pro全面屏平板电脑便携式商务办公学生教育电脑支持面容ID</span> <span class="right_desc only-two-line">面容ID解锁 Liquid视网膜显示屏
+                        A12Z芯片</span> <span class="right_size">256G</span>
+                    <div class="right_tag_list"> <span class="tag_item">APPLE</span> <span class="tag_item">旗舰店</span>
+                        <span class="tag_item">正品保障</span> <span class="tag_item">极速发货</span> <span
+                            class="tag_item">顺丰包邮</span> </div>
+                    <div class="right_content lame-flex lame-ai-end">
+                        <div class="content_price"> <span class="price_unit">¥</span> <span
+                                class="price_num">9899.99</span> </div>
+                        <div class="content_sale"> <span>9999件已售</span> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-menu"> 收藏 </div>
+        </div>
+    </div>
+    <!-- 外接式js -->
+    <script type="text/javascript" src="./index.js"></script>
+    <script type="text/javascript" src="./jquery-3.6.0.min.js"></script>
+
+</body>
+
+</html>
